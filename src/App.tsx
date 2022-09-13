@@ -1,9 +1,10 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Work from "./views/work";
 import About from "./views/about";
 import Home from "./views/home";
+
+const BASENAME = process.env.NODE_ENV === "development" ? "/" : "/ghpages-demo";
 
 function App() {
   const links = ["home", "about", "work"];
@@ -22,7 +23,7 @@ function App() {
         </nav>
       </div>
       <div>
-        <BrowserRouter>
+        <BrowserRouter basename={BASENAME}>
           <Routes>
             <Route path="/work" element={<Work />} />
             <Route path="/about" element={<About />} />
