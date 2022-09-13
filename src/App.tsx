@@ -8,6 +8,7 @@ const BASENAME = process.env.NODE_ENV === "development" ? "/" : "/ghpages-demo";
 
 function App() {
   const links = ["home", "about", "work"];
+  console.log(process.env);
   return (
     <div className="App">
       <div>
